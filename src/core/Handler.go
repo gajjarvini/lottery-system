@@ -86,6 +86,7 @@ func handleAddNewLinesRequest(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Error.Println("Invalid ID")
 		fmt.Fprintf(w, "%+v", err)
+		return
 	}
 
 	log.Info.Println("Successfully appended new lines to the ticket id :", ID)

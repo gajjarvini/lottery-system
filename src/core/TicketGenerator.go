@@ -5,6 +5,7 @@ import (
 	log "logger"
 	"math/rand"
 	"net/http"
+	"sort"
 )
 
 type ticket struct {
@@ -48,6 +49,11 @@ func sendTicketResult(w http.ResponseWriter, id int) error {
 		log.Error.Println("Error setting status in database, err: ", err)
 		return err
 	}
+
+	sort.SliceStable(arrLineResult, func(i, j int) bool {
+		return arrLineResult[i].LineResult < arrLineResult[j].LineResult
+	})
+
 	fmt.Fprintf(w, "ID:%d %+v", t.ID, arrLineResult)
 	return nil
 }
