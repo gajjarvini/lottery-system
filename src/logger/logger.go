@@ -16,7 +16,7 @@ var (
 	Error *log.Logger
 )
 
-/*Init is for intiate the logging*/
+/*Init is for intiating the logging*/
 func Init(
 	traceHandle io.Writer,
 	infoHandle io.Writer,
