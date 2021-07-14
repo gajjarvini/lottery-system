@@ -10,7 +10,7 @@ const (
 	configFile = "config/conf.json"
 )
 
-/*GetConfigFileValues is used for parse the values from config file*/
+/*GetConfigFileValues is used for parsing the values from config file*/
 func GetConfigFileValues() error {
 	data, err := ioutil.ReadFile(configFile)
 	if err != nil {
