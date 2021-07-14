@@ -12,7 +12,7 @@ const (
 
 var fileHandle *os.File
 
-/*OpenLoggerFile is for to put the logs*/
+/*OpenLoggerFile is for putting the logs*/
 func OpenLoggerFile() error {
 	err := os.MkdirAll(logPath, 0777)
 	if err != nil {
